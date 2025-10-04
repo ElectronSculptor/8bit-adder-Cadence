@@ -64,13 +64,13 @@ It was implemented using **only NAND gates**, applying De Morgan’s laws.
 ## 🔸 Full Adder
 
 The Full Adder adds **A**, **B**, and **Cin**, and outputs:
-- Sum: \( S = (A \oplus B) \oplus C_{in} \)  
-- Carry: \( C_{out} = (A \cdot B) + (C_{in} \cdot (A \oplus B)) \)  
+- Sum: $S = (A \oplus B) \oplus C_{in}$  
+- Carry: $C_{out} = (A \cdot B) + (C_{in} \cdot (A \oplus B))$  
 
 The design reuses **two Half Adders** and one **NAND-based carry circuit**.
 
 <p align="center">
-  <img src="./full_adder/Cellview%20Fulladder.png" alt="Full Adder schematic" width="350"/>
+  <img src="./full_adder/Cellview%20Fulladder.png" alt="Full Adder schematic" width="550"/>
   <img src="./full_adder/cellview%20testbench%20fulladder.png" alt="Full Adder testbench" width="350"/>
 </p>
 
@@ -113,22 +113,17 @@ The **critical path** determines the maximum propagation delay of the circuit.
 
 | Circuit | Output | Delay Expression | Equivalent Delay |
 |----------|---------|------------------|------------------|
-| Half Adder | S | \( \delta_{HA}(S) = 3\delta \) | 3δ |
-| Full Adder | Cout | \( \delta_{FA}(C_{out}) = 5\delta \) | 5δ |
-| 8-bit Adder | Cout | \( \delta_{8A}(C_{out}) = 19\delta \) | 19δ |
+| Half Adder | S | $\delta_{HA}(S) = 3\delta$ | 3δ |
+| Full Adder | Cout | $\delta_{FA}(C_{out}) = 5\delta$ | 5δ |
+| 8-bit Adder | Cout | $\delta_{8A}(C_{out}) = 19\delta$ | 19δ |
 
 Thus, the total delay of the 8-bit adder is approximately **19 gate delays (19δ)**, corresponding to the propagation of the carry through all stages.
-
-<p align="center">
-  <img src="./adder8/critical_path.png" alt="Critical path diagram" width="600"/>
-</p>
 
 ---
 
 ## 🧮 Observations
 - The hierarchical design simplifies debugging and reuse.  
-- The ripple-carry structure, while simple, introduces a **long delay** due to serial carry propagation.  
-- More advanced architectures (like carry-lookahead adders) can significantly reduce the critical path.
+- The ripple-carry structure, while simple, introduces a **long delay** due to serial carry propagation. 
 
 ---
 
