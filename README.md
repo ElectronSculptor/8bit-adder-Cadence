@@ -16,17 +16,7 @@ It was carried out as part of an **ASIC design lab** at the *École des Mines de
 ## ⚙️ Tools & Technology
 - **Software**: Cadence Virtuoso, ADE XL  
 - **Technology**: AMS 0.35µm (C35B4)  
-- **Logic gates used**: NAND-based synthesis (`CORELIB/nand20`)  
-- **Operating environment**: Linux server (tallinn7)
-
-Example setup commands:
-```bash
-cd /working/directory
-cp /tmp/.cshrc_ams .
-tcsh
-source .cshrc_ams
-ams_cds -64 -tech c35b4
-```
+- **Logic gates used**: NAND-based synthesis (`CORELIB/nand20`)
 
 ---
 
